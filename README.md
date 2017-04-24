@@ -7,9 +7,12 @@
     * 通过构造函数以参数的形式将所需服务绑定在类上面，类被调用的时候服务也将被初始化。
     * 在相应的方法上通过调用类属性的方式调用服务就可以了。
     
+```javascript
+static $inject = ["$log", "$http","$window"];
 
-    static $inject = ["$log", "$http","$window"];
-    constructor(private $log: ng.ILogService, private $http: ng.IHttpService, private $window:ng.IWindowService){}  
+constructor(private $log: ng.ILogService, private $http: ng.IHttpService, private $window:ng.IWindowService){}  
+
+``` 
     注意：构造函数上的参数即为数组上面的服务
 ###### `directive`有些不一样，指令在使用之前需要声明，而声明需要调实例方法。
 
